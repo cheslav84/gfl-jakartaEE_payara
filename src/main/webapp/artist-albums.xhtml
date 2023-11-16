@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <f:view>
         <h:head>
@@ -11,20 +12,14 @@
         </h:head>
         <h:body>
             <h1>#{artistBean.artist.name}</h1>
-<!--            <h:form>-->
-                <h:dataTable value="#{artistBean.artist.albums}" var="album">
-                    <h:column>
-                        <f:facet name="header">№</f:facet>
+                <p:dataTable value="#{artistBean.artist.albums}" var="album" stripedRows="true" rowHover="true">
+                    <p:column headerText="№">
                         <h:outputText value="#{album.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Title</f:facet>
+                    </p:column>
+                    <p:column headerText="Title">
                         <h:outputText value="#{album.title}"/>
-                    </h:column>
-
-                </h:dataTable>
-<!--            </h:form>-->
-
+                    </p:column>
+                </p:dataTable>
         </h:body>
     </f:view>
 </html>
