@@ -10,6 +10,7 @@
             <title>Artists</title>
         </h:head>
         <h:body>
+            <h:link value="Albums" outcome="albums"/>
             <h:form>
                 <h:inputText value="#{artistBean.artist.name}"/>
                 <h:commandButton value="add" action="#{artistBean.add()}"/>
@@ -23,6 +24,10 @@
                     <h:column>
                         <f:facet name="header">Name</f:facet>
                         <h:outputText value="#{artist.name}"/>
+                    </h:column>
+                    <h:column>
+                    <f:facet name="header">Albums</f:facet>
+                        <h:commandButton value="show" action="#{artistBean.showAlbums(artist.id)}"/>
                     </h:column>
                     <h:column>
                     <f:facet name="header">x</f:facet>
